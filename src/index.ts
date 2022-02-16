@@ -28,4 +28,12 @@ loader
 
     app.stage.addChild(animatedSprite);
     animatedSprite.animationSpeed = 0.5;
+
+    app.ticker.add(() => {
+      animatedSprite.x += 10;
+
+      if(animatedSprite.x == (screen.width + 100)) {
+        animatedSprite.x = 0;
+      }
+    });
   });
